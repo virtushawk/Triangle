@@ -39,4 +39,13 @@ public class Point {
        hash = hash * 31 + Double.hashCode(y);
        return hash;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Point{");
+        sb.append("x=").append(x);
+        sb.append(", y=").append(y);
+        sb.append('}');
+        return sb.toString();
+    }
 }

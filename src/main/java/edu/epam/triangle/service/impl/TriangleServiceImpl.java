@@ -24,7 +24,9 @@ public class TriangleServiceImpl implements TriangleService {
         double y2 = triangle.getB().getY();
         double x3 = triangle.getC().getX();
         double y3 = triangle.getC().getY();
-        return 1.0/2 * Math.abs((x1 - x3) * (y2-y3) - (x2-x3) * (y1 - y3));
+        double result = 1.0 / 2 * Math.abs((x1 - x3) * (y2 - y3) - (x2 - x3) * (y1 - y3));
+        logger.info("area of {} is {}",triangle,result);
+        return result;
     }
 
     @Override
@@ -35,7 +37,9 @@ public class TriangleServiceImpl implements TriangleService {
         double ab = sideLength(a,b);
         double ac = sideLength(a,c);
         double bc = sideLength(b,c);
-        return ab + ac + bc;
+        double result = ab + ac + bc;
+        logger.info("Perimeter of {} is {}",triangle,result);
+        return result;
     }
 
     @Override
@@ -44,7 +48,9 @@ public class TriangleServiceImpl implements TriangleService {
         double y1 = p1.getY();
         double x2 = p2.getX();
         double y2 = p2.getY();
-        return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        double result = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+        logger.info("Side length of {} and {} is {}",p1,p2,result);
+        return result;
     }
 
     @Override
@@ -60,6 +66,7 @@ public class TriangleServiceImpl implements TriangleService {
         if(result == 0) {
             flag = false;
         }
+        logger.info("Is {} triangle : {}",triangle,flag);
         return flag;
     }
 
@@ -75,6 +82,7 @@ public class TriangleServiceImpl implements TriangleService {
         if((ab == Math.hypot(ac,bc)) || (ac == Math.hypot(ab,bc)) || (bc == Math.hypot(ab,ac))) {
             flag = true;
         }
+        logger.info("Is {} right : {} ",triangle,flag);
         return flag;
     }
 
@@ -90,6 +98,7 @@ public class TriangleServiceImpl implements TriangleService {
         if((ab == ac) || (ab == bc) || (ac == bc)){
             flag = true;
         }
+        logger.info("Is {} isosceles : {}",triangle,flag);
         return flag;
     }
 
@@ -105,6 +114,7 @@ public class TriangleServiceImpl implements TriangleService {
         if((ab == ac) && (ab == bc) && (ac == bc)){
             flag = true;
         }
+        logger.info("Is {} equilateral : {}",triangle,flag);
         return flag;
     }
 }

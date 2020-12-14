@@ -2,13 +2,15 @@ package edu.epam.triangle.entity.impl;
 
 import edu.epam.triangle.entity.Point;
 import edu.epam.triangle.entity.Shape;
-import edu.epam.triangle.util.IdGenerator;
+import edu.epam.triangle.observer.Observable;
+import edu.epam.triangle.observer.Observer;
+import edu.epam.triangle.observer.impl.TriangleObserver;
 
-public class Triangle extends Shape {
+public class Triangle extends Shape implements Observable<TriangleObserver> {
     private Point a;
     private Point b;
     private Point c;
-    private long id = IdGenerator.generateId();
+    private Observer<Triangle> observer;
 
     public Triangle(Point a, Point b, Point c) {
         this.a = a;
@@ -22,6 +24,7 @@ public class Triangle extends Shape {
 
     public void setA(Point a) {
         this.a = a;
+        notifyObserver();
     }
 
     public Point getB() {
@@ -30,6 +33,7 @@ public class Triangle extends Shape {
 
     public void setB(Point b) {
         this.b = b;
+        notifyObserver();
     }
 
     public Point getC() {
@@ -38,10 +42,7 @@ public class Triangle extends Shape {
 
     public void setC(Point c) {
         this.c = c;
-    }
-
-    public long getId() {
-        return id;
+        notifyObserver();
     }
 
     @Override
@@ -58,5 +59,34 @@ public class Triangle extends Shape {
         hash = hash * 31 + ((b == null) ? 0 : b.hashCode());
         hash = hash * 31 + ((c == null) ? 0 : c.hashCode());
         return hash;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Triangle{");
+        sb.append("a=").append(a);
+        sb.append(", b=").append(b);
+        sb.append(", c=").append(c);
+        sb.append(", id=").append(getId());
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
+    public void attach(TriangleObserver observer) {
+        this.observer = observer;
+    }
+
+    @Override
+    public void detach(TriangleObserver observer) {
+        this.observer = null;
+    }
+
+    @Override
+    public void notifyObserver() {
+        if(observer != null) {
+            observer.performedArea(this);
+            observer.performedPerimeter(this);
+        }
     }
 }
