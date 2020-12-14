@@ -29,10 +29,9 @@ public class TriangleRepositoryTest {
         Specification specification = new AreaIntervalSpecification(1,10);
         List<Triangle> actual = repository.query(specification);
         List<Triangle> expected = new ArrayList<>();
-        Triangle triangle = new Triangle(new Point(1,3),new Point(2,-5),new Point(-8,4));
+        expected.add(repository.get(1));
+        expected.add(repository.get(2));
         expected.add(repository.get(3));
-        expected.add(repository.get(4));
-        expected.add(repository.get(5));
         Assert.assertEquals(actual,expected);
     }
 }
