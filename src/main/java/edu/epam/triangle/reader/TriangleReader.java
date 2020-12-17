@@ -19,7 +19,7 @@ public class TriangleReader {
         try (Stream<String> stream = Files.lines(Paths.get(path))) {
             list = stream.collect(Collectors.toList());
         } catch (IOException e) {
-            logger.error(e);
+            logger.error("an error occurred while reading the file : {} ",e.getMessage());
         }
         return list;
     }

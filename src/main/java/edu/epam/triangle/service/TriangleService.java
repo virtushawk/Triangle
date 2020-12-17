@@ -1,7 +1,7 @@
 package edu.epam.triangle.service;
 
 import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 
 public interface TriangleService {
     double area(Triangle triangle);

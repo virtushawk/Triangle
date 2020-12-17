@@ -10,14 +10,15 @@ public class InputValidator {
         if (data.length != DATA_LENGTH){
             return false;
         }
-        for (String number: data) {
-            if(!isNumber(number)){
+        int i = 0;
+        while (i < data.length) {
+            if(!isNumber(data[i])) {
                 return false;
             }
+            i++;
         }
         return true;
     }
-
     public boolean isNumber(String number){
         return number.matches(NUMBER_REGEX);
     }

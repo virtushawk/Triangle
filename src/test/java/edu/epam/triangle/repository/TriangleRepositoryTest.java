@@ -1,8 +1,6 @@
 package edu.epam.triangle.repository;
 
-import edu.epam.triangle.creator.RepositoryCreator;
-import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 import edu.epam.triangle.repository.impl.TriangleRepository;
 import edu.epam.triangle.specification.Specification;
 import edu.epam.triangle.specification.impl.AreaIntervalSpecification;
@@ -20,8 +18,6 @@ public class TriangleRepositoryTest {
 
     @BeforeClass
     public void beforeClass() {
-        RepositoryCreator repositoryCreator = new RepositoryCreator();
-        repositoryCreator.createRepositoryFromFile(PATH);
     }
 
     @Test

@@ -1,7 +1,7 @@
 package edu.epam.triangle.service;
 
 import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 import edu.epam.triangle.service.impl.TriangleServiceImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -89,6 +89,8 @@ public class TriangleServiceTest {
         TriangleService triangleService = TriangleServiceImpl.getInstance();
         boolean actual = triangleService.isEquilateralTriangle(triangle);
         Assert.assertFalse(actual);
+
+
     }
 
 

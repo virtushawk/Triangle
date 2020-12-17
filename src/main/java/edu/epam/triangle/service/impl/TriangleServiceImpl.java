@@ -1,7 +1,7 @@
 package edu.epam.triangle.service.impl;
 
 import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 import edu.epam.triangle.service.TriangleService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,7 +1,7 @@
 package edu.epam.triangle.specification.impl;
 
 import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 import edu.epam.triangle.specification.Specification;
 
 public class PointFourthQuadrantSpecification implements Specification<Triangle> {

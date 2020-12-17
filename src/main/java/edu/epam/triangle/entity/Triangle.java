@@ -1,7 +1,5 @@
-package edu.epam.triangle.entity.impl;
+package edu.epam.triangle.entity;
 
-import edu.epam.triangle.entity.Point;
-import edu.epam.triangle.entity.Shape;
 import edu.epam.triangle.observer.Observable;
 import edu.epam.triangle.observer.Observer;
 import edu.epam.triangle.observer.impl.TriangleObserver;

@@ -1,6 +1,6 @@
 package edu.epam.triangle.repository.impl;
 
-import edu.epam.triangle.entity.impl.Triangle;
+import edu.epam.triangle.entity.Triangle;
 import edu.epam.triangle.repository.Repository;
 import edu.epam.triangle.specification.Specification;
 
