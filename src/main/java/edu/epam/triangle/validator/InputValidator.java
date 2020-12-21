@@ -1,12 +1,12 @@
 package edu.epam.triangle.validator;
 
 public class InputValidator {
-    private static final String SPLIT_BY = "\\s+";
+    private static final String DELIMITER = "\\s+";
     private static final String NUMBER_REGEX = "^-?\\d*(\\.\\d+)?$";
     private static final int DATA_LENGTH = 6;
 
     public boolean validateInput(String line){
-        String [] data = line.split(SPLIT_BY);
+        String [] data = line.split(DELIMITER);
         if (data.length != DATA_LENGTH){
             return false;
         }

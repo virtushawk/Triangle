@@ -4,7 +4,7 @@ import edu.epam.triangle.observer.Observable;
 import edu.epam.triangle.observer.Observer;
 import edu.epam.triangle.observer.impl.TriangleObserver;
 
-public class Triangle extends Shape implements Observable<TriangleObserver> {
+public class Triangle extends AbstractShape implements Observable<TriangleObserver> {
     private Point a;
     private Point b;
     private Point c;
@@ -44,6 +44,24 @@ public class Triangle extends Shape implements Observable<TriangleObserver> {
     }
 
     @Override
+    public void attach(TriangleObserver observer) {
+        this.observer = observer;
+    }
+
+    @Override
+    public void detach(TriangleObserver observer) {
+        this.observer = null;
+    }
+
+    @Override
+    public void notifyObserver() {
+        if(observer != null) {
+            observer.performedArea(this);
+            observer.performedPerimeter(this);
+        }
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -70,21 +88,4 @@ public class Triangle extends Shape implements Observable<TriangleObserver> {
         return sb.toString();
     }
 
-    @Override
-    public void attach(TriangleObserver observer) {
-        this.observer = observer;
-    }
-
-    @Override
-    public void detach(TriangleObserver observer) {
-        this.observer = null;
-    }
-
-    @Override
-    public void notifyObserver() {
-        if(observer != null) {
-            observer.performedArea(this);
-            observer.performedPerimeter(this);
-        }
-    }
 }

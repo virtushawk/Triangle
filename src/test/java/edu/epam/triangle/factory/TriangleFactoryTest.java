@@ -19,7 +19,7 @@ public class TriangleFactoryTest {
         Assert.assertEquals(actual,expected);
     }
 
-    @Test(expectedExceptions =ShapeFactoryException.class)
+    @Test(expectedExceptions = ShapeFactoryException.class)
     public void createShapeErrorTest() throws ShapeFactoryException {
         TriangleFactory triangleFactory = new TriangleFactory();
         Point p1 = new Point(1,1);

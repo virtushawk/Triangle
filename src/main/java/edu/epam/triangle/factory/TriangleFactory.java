@@ -11,7 +11,7 @@ public class TriangleFactory extends ShapeFactory {
     public Triangle createShape(Point...points) throws ShapeFactoryException {
         TriangleValidator triangleValidator = new TriangleValidator();
         if(!triangleValidator.isTriangle(points[0],points[1],points[2])){
-            throw new ShapeFactoryException();
+            throw new ShapeFactoryException("points cannot be a triangle : " + points[0] + "," + points[1] + "," + points[2]);
         }
         Triangle triangle = new Triangle(points[0],points[1],points[2]);
         return triangle;

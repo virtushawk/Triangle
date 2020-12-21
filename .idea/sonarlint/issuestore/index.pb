@@ -67,3 +67,9 @@ t
 Dsrc/main/java/edu/epam/triangle/exception/ShapeFactoryException.java,6\d\6de6262c872f62c87691e307ae761a44d6c222db
 l
 <src/main/java/edu/epam/triangle/factory/TriangleFactory.java,c\d\cd73bcfcfa88b990fe525a5d441620fa8ff52923
+p
+@src/test/java/edu/epam/triangle/factory/TriangleFactoryTest.java,0\a\0a10a899ee40e9be80049fcf3cb5448b1fb8501b
+r
+Bsrc/test/java/edu/epam/triangle/observer/TriangleObserverTest.java,6\f\6f2614493bd77ad2ddaaa271405585f8fae72683
+n
+>src/test/java/edu/epam/triangle/parser/TriangleParserTest.java,b\a\ba8998a3354b39da48e970178c779d8e5eeb6317
